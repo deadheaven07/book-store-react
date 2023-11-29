@@ -1,5 +1,6 @@
 //exports
-export * from "./LoadingSpinner";
-export * from "./AppPlacementWrapper";
+export { LoadingSpinner } from "./LoadingSpinner";
+export { AppPlacementWrapper } from "./AppPlacementWrapper";
 
 // lazy imports
+export { EachBook } from "./EachBook";

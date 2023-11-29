@@ -1,8 +1,8 @@
 import { Suspense } from "react";
 import { LoadingSpinner } from "./components";
-import { Route, Routes } from "react-router-dom";
-import { ROUTE_ROOT } from "./constants/route";
-import { Homepage } from "./pages";
+import { Route, Routes, useNavigate } from "react-router-dom";
+import { ROUTE_BOOKS, ROUTE_ROOT } from "./constants/route";
+import { Books, Homepage } from "./pages";
 import "react-toastify/dist/ReactToastify.css";
 import { Slide, ToastContainer } from "react-toastify";
 import { IN_APP_NOTIFICATION_DEFAULT_TIME } from "./constants/general";
@@ -38,6 +38,7 @@ function App() {
               <Routes>
                 {/* All pages are lazzily imported. See index.ts for exports */}
                 <Route path={ROUTE_ROOT} element={<Homepage />} />
+                <Route path={ROUTE_BOOKS} element={<Books />} />
               </Routes>
             </Suspense>
           </div>
@@ -50,14 +51,30 @@ function App() {
 export default App;
 
 const NavBar = () => {
+  const navigate = useNavigate();
   const totalQuantityInCart = useSelector((state) => state.cart.totalQuantity);
+
   return (
     <div className="w-full h-14 bg-orange-400 flex items-center">
       <div className="flex items-center justify-between gap-4 w-4/6 mx-auto">
-        <p className="  text-white font-bold">Home</p>
+        <button
+          onClick={() => {
+            navigate(ROUTE_ROOT);
+          }}
+          className="  text-white font-bold"
+        >
+          Home
+        </button>
         <div className="flex  gap-6">
-          <p className="  text-white font-bold">Books</p>
-          <p className="  text-white font-bold">Authors</p>
+          <button
+            onClick={() => {
+              navigate(ROUTE_BOOKS);
+            }}
+            className="  text-white font-bold"
+          >
+            Books
+          </button>
+          <button className="  text-white font-bold">Authors</button>
           <p className="  text-white font-bold">
             Cart{" "}
             <span className="border rounded-full p-1">
