@@ -73,6 +73,7 @@ const cartSlice = createSlice({
               existingBook.id.toString().toLowerCase()
           );
         }
+        state.totalQuantity -= 1;
       }
       saveCartToLocalStorage(state);
     },

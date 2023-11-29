@@ -6,6 +6,7 @@ import { Homepage } from "./pages";
 import "react-toastify/dist/ReactToastify.css";
 import { Slide, ToastContainer } from "react-toastify";
 import { IN_APP_NOTIFICATION_DEFAULT_TIME } from "./constants/general";
+import { useSelector } from "react-redux";
 
 function App() {
   return (
@@ -49,6 +50,7 @@ function App() {
 export default App;
 
 const NavBar = () => {
+  const totalQuantityInCart = useSelector((state) => state.cart.totalQuantity);
   return (
     <div className="w-full h-14 bg-orange-400 flex items-center">
       <div className="flex items-center justify-between gap-4 w-4/6 mx-auto">
@@ -56,7 +58,12 @@ const NavBar = () => {
         <div className="flex  gap-6">
           <p className="  text-white font-bold">Books</p>
           <p className="  text-white font-bold">Authors</p>
-          <p className="  text-white font-bold">Cart</p>
+          <p className="  text-white font-bold">
+            Cart{" "}
+            <span className="border rounded-full p-1">
+              {totalQuantityInCart}
+            </span>
+          </p>
         </div>
       </div>
     </div>
