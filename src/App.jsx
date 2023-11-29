@@ -16,6 +16,7 @@ import {
   EachAuthor,
   EachBookPage,
   Homepage,
+  NotFound,
 } from "./pages";
 import "react-toastify/dist/ReactToastify.css";
 import { Slide, ToastContainer } from "react-toastify";
@@ -57,6 +58,7 @@ function App() {
                 <Route path={ROUTE_EACH_AUTHOR} element={<EachAuthor />} />
                 <Route path={ROUTE_EACH_BOOK} element={<EachBookPage />} />
                 <Route path={ROUTE_CART} element={<Cart />} />
+                <Route path={"*"} element={<NotFound />} />
               </Routes>
             </Suspense>
           </div>
