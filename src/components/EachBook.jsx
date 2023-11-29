@@ -1,5 +1,10 @@
-import { useDispatch } from "react-redux";
-import { cartActions } from "../redux";
+import { useNavigate } from "react-router-dom";
+import { useCartHandler } from "../hooks";
+import { ROUTE_EACH_BOOK } from "../constants/route";
+import {
+  URL_PARAM_BOOK_NAME,
+  URL_PARAM_BOOK_NAME_TEXT,
+} from "../constants/general";
 
 export const EachBook = ({
   id,
@@ -11,26 +16,19 @@ export const EachBook = ({
   price,
   quantityInCart,
 }) => {
-  const dispatch = useDispatch();
-  const addToCartOnClickHandler = () => {
-    dispatch(
-      cartActions.addItemToCart({
-        id,
-        name,
-        author,
-        maxQuantity,
-        image,
-        featured,
-        price,
-      })
-    );
-  };
+  const navigate = useNavigate();
+  const { addToCartOnClickHandler, decreaseQuantityInCartHandler } =
+    useCartHandler({ id, name, author, maxQuantity, image, featured, price });
 
-  const decreaseQuantityInCartHandler = () => {
-    dispatch(cartActions.removeItemFromCart(id));
-  };
   return (
-    <div className="w-64 border-2 rounded-lg flex items-center  flex-col pt-4 border-orange-400 ">
+    <div
+      onClick={() => {
+        navigate(
+          `${ROUTE_EACH_BOOK}/?${URL_PARAM_BOOK_NAME}=${id}&${URL_PARAM_BOOK_NAME_TEXT}=${name}`
+        );
+      }}
+      className="w-64 border-2 rounded-lg flex items-center  flex-col pt-4 border-orange-400 "
+    >
       <div className="h-60 w-60 ">
         <img src={image} alt="book" className="object-cover p-4" />
       </div>

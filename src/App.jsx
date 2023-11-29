@@ -5,9 +5,10 @@ import {
   ROUTE_AUTHORS,
   ROUTE_BOOKS,
   ROUTE_EACH_AUTHOR,
+  ROUTE_EACH_BOOK,
   ROUTE_ROOT,
 } from "./constants/route";
-import { Authors, Books, EachAuthor, Homepage } from "./pages";
+import { Authors, Books, EachAuthor, EachBookPage, Homepage } from "./pages";
 import "react-toastify/dist/ReactToastify.css";
 import { Slide, ToastContainer } from "react-toastify";
 import { IN_APP_NOTIFICATION_DEFAULT_TIME } from "./constants/general";
@@ -46,6 +47,7 @@ function App() {
                 <Route path={ROUTE_BOOKS} element={<Books />} />
                 <Route path={ROUTE_AUTHORS} element={<Authors />} />
                 <Route path={ROUTE_EACH_AUTHOR} element={<EachAuthor />} />
+                <Route path={ROUTE_EACH_BOOK} element={<EachBookPage />} />
               </Routes>
             </Suspense>
           </div>
