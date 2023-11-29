@@ -3,28 +3,46 @@ import { LoadingSpinner } from "./components";
 import { Route, Routes } from "react-router-dom";
 import { ROUTE_ROOT } from "./constants/route";
 import { Homepage } from "./pages";
+import "react-toastify/dist/ReactToastify.css";
+import { Slide, ToastContainer } from "react-toastify";
+import { IN_APP_NOTIFICATION_DEFAULT_TIME } from "./constants/general";
 
 function App() {
   return (
-    <div className="h-screen w-screen bg-neutral-100 flex flex-col">
-      <NavBar />
-      <div className="h-10 w-full flex-grow ">
-        <div className={`h-full w-full `}>
-          <Suspense
-            fallback={
-              <div className="flex flex-col items-center justify-center w-full h-full">
-                <LoadingSpinner height={"h-8"} />
-              </div>
-            }
-          >
-            <Routes>
-              {/* All pages are lazzily imported. See index.ts for exports */}
-              <Route path={ROUTE_ROOT} element={<Homepage />} />
-            </Routes>
-          </Suspense>
+    <>
+      <ToastContainer
+        position="top-center"
+        autoClose={IN_APP_NOTIFICATION_DEFAULT_TIME}
+        hideProgressBar={false}
+        newestOnTop={true}
+        transition={Slide}
+        closeOnClick
+        rtl={false}
+        draggable
+        pauseOnHover={false}
+        theme="dark"
+        // limit={2}
+      />
+      <div className="h-screen w-screen bg-neutral-100 flex flex-col">
+        <NavBar />
+        <div className="h-10 w-full flex-grow ">
+          <div className={`h-full w-full `}>
+            <Suspense
+              fallback={
+                <div className="flex flex-col items-center justify-center w-full h-full">
+                  <LoadingSpinner height={"h-8"} />
+                </div>
+              }
+            >
+              <Routes>
+                {/* All pages are lazzily imported. See index.ts for exports */}
+                <Route path={ROUTE_ROOT} element={<Homepage />} />
+              </Routes>
+            </Suspense>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

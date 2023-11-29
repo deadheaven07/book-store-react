@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { toast } from "react-toastify";
 
 const localStorageCartKey = "_local_cart_";
 
@@ -29,8 +30,8 @@ const cartSlice = createSlice({
       const newBook = action.payload;
       const existingBook = state.items.find(
         (item) =>
-          item.id.toLowerCase().toString() ===
-          newBook.id.toLowerCase().toString()
+          item.id.toString().toLowerCase() ===
+          newBook.id.toString().toLowerCase()
       );
 
       // console.log(existingItem.quantity);
@@ -42,6 +43,9 @@ const cartSlice = createSlice({
           // console.log("Control reached here");
           existingBook.quantity += 1;
           state.totalQuantity += 1;
+        } else {
+          toast.dismiss();
+          toast.error(`Max Quantity: ${existingBook.maxQuantity}`);
         }
       } else {
         state.items.push({ ...newBook, quantity: 1 });
@@ -56,7 +60,7 @@ const cartSlice = createSlice({
 
       const existingBook = state.items.find(
         (item) =>
-          item.id.toLowerCase().toString() === bookId.toLowerCase().toString()
+          item.id.toString().toLowerCase() === bookId.toString().toLowerCase()
       );
 
       if (existingBook) {
@@ -65,8 +69,8 @@ const cartSlice = createSlice({
         } else {
           state.items = state.items.filter(
             (item) =>
-              item.id.toLowerCase().toString() !==
-              existingBook.id.toLowerCase().toString()
+              item.id.toString().toLowerCase() !==
+              existingBook.id.toString().toLowerCase()
           );
         }
       }
@@ -74,3 +78,6 @@ const cartSlice = createSlice({
     },
   },
 });
+
+export const cartActions = cartSlice.actions;
+export default cartSlice;

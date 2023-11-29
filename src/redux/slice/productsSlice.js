@@ -9,6 +9,7 @@ const products = [
     maxQuantity: 3,
     image: images.book,
     featured: true,
+    price: 525,
   },
   {
     id: 2,
@@ -17,6 +18,7 @@ const products = [
     maxQuantity: 5,
     image: images.book,
     featured: false,
+    price: 55,
   },
   {
     id: 3,
@@ -25,6 +27,7 @@ const products = [
     maxQuantity: 7,
     image: images.book,
     featured: true,
+    price: 25,
   },
   {
     id: 4,
@@ -33,6 +36,7 @@ const products = [
     maxQuantity: 2,
     image: images.book,
     featured: false,
+    price: 85,
   },
   {
     id: 5,
@@ -41,6 +45,7 @@ const products = [
     maxQuantity: 4,
     image: images.book,
     featured: true,
+    price: 125,
   },
   {
     id: 6,
@@ -49,6 +54,7 @@ const products = [
     maxQuantity: 6,
     image: images.book,
     featured: false,
+    price: 110,
   },
   {
     id: 7,
@@ -57,6 +63,7 @@ const products = [
     maxQuantity: 8,
     image: images.book,
     featured: true,
+    price: 523,
   },
   {
     id: 8,
@@ -65,6 +72,7 @@ const products = [
     maxQuantity: 1,
     image: images.book,
     featured: false,
+    price: 323,
   },
   {
     id: 9,
@@ -73,6 +81,7 @@ const products = [
     maxQuantity: 9,
     image: images.book,
     featured: true,
+    price: 895,
   },
   {
     id: 10,
@@ -81,6 +90,7 @@ const products = [
     maxQuantity: 5,
     image: images.book,
     featured: false,
+    price: 5233,
   },
   {
     id: 11,
@@ -89,6 +99,7 @@ const products = [
     maxQuantity: 3,
     image: images.book,
     featured: true,
+    price: 5252,
   },
   {
     id: 12,
@@ -97,6 +108,7 @@ const products = [
     maxQuantity: 7,
     image: images.book,
     featured: false,
+    price: 123,
   },
   {
     id: 13,
@@ -105,6 +117,7 @@ const products = [
     maxQuantity: 4,
     image: images.book,
     featured: true,
+    price: 522,
   },
   {
     id: 14,
@@ -113,6 +126,7 @@ const products = [
     maxQuantity: 2,
     image: images.book,
     featured: false,
+    price: 522,
   },
   {
     id: 15,
@@ -121,6 +135,7 @@ const products = [
     maxQuantity: 6,
     image: images.book,
     featured: true,
+    price: 502,
   },
   {
     id: 16,
@@ -129,6 +144,7 @@ const products = [
     maxQuantity: 3,
     image: images.book,
     featured: false,
+    price: 522,
   },
   {
     id: 17,
@@ -137,6 +153,7 @@ const products = [
     maxQuantity: 8,
     image: images.book,
     featured: true,
+    price: 522,
   },
   {
     id: 18,
@@ -145,6 +162,7 @@ const products = [
     maxQuantity: 1,
     image: images.book,
     featured: false,
+    price: 521,
   },
   {
     id: 19,
@@ -153,6 +171,7 @@ const products = [
     maxQuantity: 9,
     image: images.book,
     featured: true,
+    price: 592,
   },
   {
     id: 20,
@@ -161,6 +180,7 @@ const products = [
     maxQuantity: 5,
     image: images.book,
     featured: false,
+    price: 989,
   },
   {
     id: 21,
@@ -169,6 +189,7 @@ const products = [
     maxQuantity: 3,
     image: images.book,
     featured: true,
+    price: 545,
   },
   {
     id: 22,
@@ -177,6 +198,7 @@ const products = [
     maxQuantity: 7,
     image: images.book,
     featured: false,
+    price: 662,
   },
   {
     id: 23,
@@ -185,6 +207,7 @@ const products = [
     maxQuantity: 4,
     image: images.book,
     featured: true,
+    price: 989,
   },
   {
     id: 24,
@@ -193,6 +216,7 @@ const products = [
     maxQuantity: 2,
     image: images.book,
     featured: false,
+    price: 212,
   },
   {
     id: 25,
@@ -201,6 +225,7 @@ const products = [
     maxQuantity: 6,
     image: images.book,
     featured: true,
+    price: 5212,
   },
   {
     id: 26,
@@ -209,6 +234,7 @@ const products = [
     maxQuantity: 8,
     image: images.book,
     featured: false,
+    price: 535,
   },
   {
     id: 27,
@@ -217,6 +243,7 @@ const products = [
     maxQuantity: 1,
     image: images.book,
     featured: true,
+    price: 515,
   },
   {
     id: 28,
@@ -225,6 +252,7 @@ const products = [
     maxQuantity: 9,
     image: images.book,
     featured: false,
+    price: 565,
   },
   {
     id: 29,
@@ -233,6 +261,7 @@ const products = [
     maxQuantity: 5,
     image: images.book,
     featured: true,
+    price: 585,
   },
   {
     id: 30,
@@ -241,6 +270,7 @@ const products = [
     maxQuantity: 3,
     image: images.book,
     featured: false,
+    price: 515,
   },
 ];
 
