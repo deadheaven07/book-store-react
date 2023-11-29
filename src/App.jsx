@@ -4,11 +4,19 @@ import { Route, Routes, useNavigate } from "react-router-dom";
 import {
   ROUTE_AUTHORS,
   ROUTE_BOOKS,
+  ROUTE_CART,
   ROUTE_EACH_AUTHOR,
   ROUTE_EACH_BOOK,
   ROUTE_ROOT,
 } from "./constants/route";
-import { Authors, Books, EachAuthor, EachBookPage, Homepage } from "./pages";
+import {
+  Authors,
+  Books,
+  Cart,
+  EachAuthor,
+  EachBookPage,
+  Homepage,
+} from "./pages";
 import "react-toastify/dist/ReactToastify.css";
 import { Slide, ToastContainer } from "react-toastify";
 import { IN_APP_NOTIFICATION_DEFAULT_TIME } from "./constants/general";
@@ -48,6 +56,7 @@ function App() {
                 <Route path={ROUTE_AUTHORS} element={<Authors />} />
                 <Route path={ROUTE_EACH_AUTHOR} element={<EachAuthor />} />
                 <Route path={ROUTE_EACH_BOOK} element={<EachBookPage />} />
+                <Route path={ROUTE_CART} element={<Cart />} />
               </Routes>
             </Suspense>
           </div>
@@ -91,12 +100,17 @@ const NavBar = () => {
           >
             Authors
           </button>
-          <p className="  text-white font-bold">
+          <button
+            onClick={() => {
+              navigate(ROUTE_CART);
+            }}
+            className="  text-white font-bold"
+          >
             Cart{" "}
             <span className="border rounded-full p-1">
               {totalQuantityInCart}
             </span>
-          </p>
+          </button>
         </div>
       </div>
     </div>

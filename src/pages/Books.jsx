@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { EachBook } from "../components";
+import { EachBook, Heading } from "../components";
 import { useState } from "react";
 
 const Books = () => {
@@ -10,9 +10,8 @@ const Books = () => {
   return (
     <div className="w-full h-full flex flex-col">
       {/*  */}
-      <h1 className="text-2xl text-center font-bold my-3 h-7 flex items-center justify-center">
-        All Books
-      </h1>
+      <Heading displayText={"All Books"} />
+
       {/* Featured */}
       <section className="w-full h-10 flex-1">
         <div className="w-full h-full flex flex-col ">
