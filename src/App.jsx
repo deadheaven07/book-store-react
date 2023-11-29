@@ -1,8 +1,13 @@
 import { Suspense } from "react";
 import { LoadingSpinner } from "./components";
 import { Route, Routes, useNavigate } from "react-router-dom";
-import { ROUTE_BOOKS, ROUTE_ROOT } from "./constants/route";
-import { Books, Homepage } from "./pages";
+import {
+  ROUTE_AUTHORS,
+  ROUTE_BOOKS,
+  ROUTE_EACH_AUTHOR,
+  ROUTE_ROOT,
+} from "./constants/route";
+import { Authors, Books, EachAuthor, Homepage } from "./pages";
 import "react-toastify/dist/ReactToastify.css";
 import { Slide, ToastContainer } from "react-toastify";
 import { IN_APP_NOTIFICATION_DEFAULT_TIME } from "./constants/general";
@@ -39,6 +44,8 @@ function App() {
                 {/* All pages are lazzily imported. See index.ts for exports */}
                 <Route path={ROUTE_ROOT} element={<Homepage />} />
                 <Route path={ROUTE_BOOKS} element={<Books />} />
+                <Route path={ROUTE_AUTHORS} element={<Authors />} />
+                <Route path={ROUTE_EACH_AUTHOR} element={<EachAuthor />} />
               </Routes>
             </Suspense>
           </div>
@@ -72,9 +79,16 @@ const NavBar = () => {
             }}
             className="  text-white font-bold"
           >
-            Books
+            All Books
           </button>
-          <button className="  text-white font-bold">Authors</button>
+          <button
+            onClick={() => {
+              navigate(ROUTE_AUTHORS);
+            }}
+            className="  text-white font-bold"
+          >
+            Authors
+          </button>
           <p className="  text-white font-bold">
             Cart{" "}
             <span className="border rounded-full p-1">

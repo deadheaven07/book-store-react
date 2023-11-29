@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import {} from "./../components";
+import { Heading } from "./../components";
 import { EachBook } from "../components";
 const HomePage = () => {
   const products = useSelector((state) => state.products);
@@ -10,9 +10,7 @@ const HomePage = () => {
   return (
     <div className="w-full h-full flex flex-col">
       {/*  */}
-      <h1 className="text-2xl text-center font-bold my-3 h-7 flex items-center justify-center">
-        Welcome to the world of books!
-      </h1>
+      <Heading displayText={"Welcome to the world of books!"} />
       {/* Featured */}
       <section className="w-full h-10 flex-1">
         <div className="w-full h-full flex flex-col ">
