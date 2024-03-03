@@ -2,24 +2,15 @@
 
 >Live - <https://book-store-react-b2211.web.app>
 
-## Run Locally
+- Runs the app in the development mode.
 
-Go to the project directory
+- ## Running the Project Locally
 
-```bash
-  cd book-store-react
-```
+Follow these steps to run the project on your local machine:
 
-Install dependencies
-
-```bash
-  npm install
-```
-
-Start the server
-
-```bash
-  npm run dev
-```
-
-- Runs the app in the development mode.  
+1. **Navigate to the Project Directory:**
+   cd book-store-react
+2.**Installing Depencies**
+   npm install
+3.**Start the server**
+    npm run dev
