@@ -8,9 +8,9 @@
 
 Follow these steps to run the project on your local machine:
 
-1. **Navigate to the Project Directory:**
-   cd book-store-react
-2.**Installing Depencies**
-   npm install
-3.**Start the server**
-    npm run dev
+1. **Navigate to the Project Directory:**                                          
+   cd book-store-react                               
+2.**Installing Depencies**                        
+   npm install                             
+3.**Start the server**                         
+    npm run dev                                        
